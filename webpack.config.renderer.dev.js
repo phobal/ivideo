@@ -70,6 +70,11 @@ export default merge.smart(baseConfig, {
         }
       },
       {
+        test: /\.less$/,
+        loader: `style!css!less`,
+        include: path.resolve(__dirname, 'node_modules'),
+      },
+      {
         test: /\.global\.css$/,
         use: [
           {

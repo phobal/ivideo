@@ -7,7 +7,14 @@
     "stage-0",
     "react"
   ],
-  "plugins": ["add-module-exports"],
+  "plugins": ["add-module-exports",
+    ["import",
+      {
+        "libraryName": "antd",
+        "style": "css"
+      }
+    ]
+  ],
   "env": {
     "production": {
       "presets": ["react-optimize"],

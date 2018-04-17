@@ -3,13 +3,19 @@
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
 @import "~font-awesome/css/font-awesome.css";
-
+@import "~rc-menu/assets/index.css";
+/* @import "~antd/lib/style/index.css"; */
+@import '~rc-select/assets/index.css';
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   position: relative;
-  color: white;
+  color:#000;
   height: 100vh;
-  background-color: #232c39;
-  background-image: linear-gradient(45deg, rgba(0, 216, 255, 0.5) 10%, rgba(0, 1, 127, 0.7));
+  /* background-color: #232c39; */
+  /* background-image: linear-gradient(45deg, rgba(0, 216, 255, 0.5) 10%, rgba(0, 1, 127, 0.7)); */
   font-family: Arial, Helvetica, Helvetica Neue, serif;
   overflow-y: hidden;
 }
