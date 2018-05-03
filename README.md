@@ -5,8 +5,8 @@
 #### 使用方法
 
 1. 下载客户端 
-* [Mac](https://github.com/phobal/ivideo/releases/download/1.0.0/mac.v1.0.0.zip)
-* [Windows](https://github.com/phobal/ivideo/releases/download/1.0.0/win-unpacked.v1.0.0.zip)
+* [Mac](https://github.com/phobal/ivideo/releases/download/1.0.1/ivideo-1.0.1.dmg)
+* [Windows](https://github.com/phobal/ivideo/releases/download/1.0.1/ivideo.Setup.1.0.1.exe)
 * [Ubuntu](https://github.com/phobal/ivideo/releases/download/1.0.0/linux-unpacked.v1.0.0.zip)
 
 2. 选择视频资源  
