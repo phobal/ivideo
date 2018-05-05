@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { webview } from 'electron';
+import { webview, ipcRenderer } from 'electron';
 
 import Channel from './Channel';
 import ToolBar from './ToolBar';
@@ -21,6 +21,7 @@ class VideoPlay extends PureComponent < Props > {
     url: 'https://v.qq.com',
     freeUrl: [],
     selectedUrl: 'http://vip.jlsprh.com/index.php?url=',
+    isFullScreen: false,
   }
   componentDidMount() {
     this.props.actions.getAllVideoSource();
@@ -37,6 +38,11 @@ class VideoPlay extends PureComponent < Props > {
     webview.addEventListener('will-navigate', (obj) => {
       this.setState({
         url: `${obj.url}`
+      });
+    });
+    ipcRenderer.on('enter-full-screen', (e, msg) => {
+      this.setState({
+        isFullScreen: msg
       });
     });
   }
@@ -81,17 +87,18 @@ class VideoPlay extends PureComponent < Props > {
     });
   }
   render() {
-    const { channel, url, freeUrl, title } = this.state;
+    const { channel, url, freeUrl, title, isFullScreen } = this.state;
+    const isHiddenStyle = isFullScreen ? { display: 'none'} : { display: 'flex'};
     return (
       <div style={{ display: 'flex' }}>
-        <div style={{ width: '200px' }}>
+        <div style={{ minWidth: '150px', ...isHiddenStyle }}>
           <Channel
             channel={channel}
             handleSwitchChannel={this.handleSwitchChannel}
           />
         </div>
-        <div style={{ height: '100vh', width: 'calc(100vw - 200px)', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ height: '60px' }}>
+        <div style={{ height: '100vh', width: isFullScreen ? '100vw' : 'calc(100vw - 150px)', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ height: '60px', ...isHiddenStyle }}>
             <ToolBar
               onComeback={this.onComeback}
               onSourceSelected={this.onSourceSelected}
@@ -103,7 +110,7 @@ class VideoPlay extends PureComponent < Props > {
           <webview
             ref={ (webview) => {this.webview = webview} }
             title="腾讯视频"
-            style={{ height: 'calc(100vh - 60px)', width: '100%' }}
+            style={{ height: isFullScreen ? '100vh' : 'calc(100vh - 60px)', width: '100%' }}
             src={url}
             allowpopups="true"
           >

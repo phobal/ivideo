@@ -10,7 +10,7 @@
  *
  * @flow
  */
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain} from 'electron';
 import MenuBuilder from './menu';
 
 let mainWindow = null;
@@ -81,6 +81,12 @@ app.on('ready', async () => {
     mainWindow = null;
   });
 
+  mainWindow.on('enter-full-screen', () => {
+    mainWindow.webContents.send('enter-full-screen', true);
+  })
+  mainWindow.on('leave-full-screen', () => {
+    mainWindow.webContents.send('enter-full-screen', false);
+  })
   const menuBuilder = new MenuBuilder(mainWindow);
   menuBuilder.buildMenu();
 });
