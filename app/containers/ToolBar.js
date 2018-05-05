@@ -11,7 +11,7 @@ const ToolBar = ({ onComeback, onSwitchSource, onSourceSelected, freeUrl, title 
   return (
     <div style={{ display: 'flex', height: '100%', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px' }}>
       <div type="rollback" style={{ fontSize: '18px', cursor: 'pointer' }} onClick={onComeback}>返回</div>
-      <span>{title}</span>
+      <span style={{ padding: '0 20px', color: 'darkcyan' }}>{title}</span>
       <div
         style={{ display: 'flex', alignItems: 'center' }}
       >
