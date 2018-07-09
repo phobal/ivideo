@@ -1,5 +1,7 @@
 ### i视频
+
 #### 产品介绍
+
 > 基于 Electron 开发的跨平台客户端版本的视频播放器，该播放器包括国内主流视频平台视频资源，你不用去单独下载各个平台的客户端，只需要使用这一个客户端就能查看所有平台的视频，并且内置了各大视频网站 VIP 资源。
 
 #### 使用方法
@@ -33,4 +35,8 @@
 * React
 * Redux
 
+该项目是基于 [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate) 脚手架 进行创建，感谢 @[chentsulin](https://github.com/chentsulin)
+
+
 # 最后请大家低调使用，祝大家看得舒心
+## 本项目仅作为个人学习用途，如有侵权请联系我删除该仓库
