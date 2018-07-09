@@ -47,3 +47,6 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
 }
+.rc-select-dropdown-menu {
+  max-height: 400px;
+}
