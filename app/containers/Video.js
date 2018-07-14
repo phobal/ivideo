@@ -6,6 +6,7 @@ import { webview, ipcRenderer } from 'electron';
 
 import Channel from './Channel';
 import ToolBar from './ToolBar';
+import Frame from './Frame';
 import * as sourceActions from '../actions/source';
 
 class VideoPlay extends PureComponent < Props > {
@@ -88,25 +89,14 @@ class VideoPlay extends PureComponent < Props > {
   }
   render() {
     const { channel, url, freeUrl, title, isFullScreen } = this.state;
-    const isHiddenStyle = isFullScreen ? { display: 'none'} : { display: 'flex'};
     return (
-      <div style={{ display: 'flex' }}>
-        <div style={{ minWidth: '150px', ...isHiddenStyle }}>
-          <Channel
-            channel={channel}
-            handleSwitchChannel={this.handleSwitchChannel}
-          />
-        </div>
-        <div style={{ height: '100vh', width: isFullScreen ? '100vw' : 'calc(100vw - 150px)', display: 'flex', flexDirection: 'column' }}>
-          <div style={{ height: '60px', ...isHiddenStyle }}>
-            <ToolBar
-              onComeback={this.onComeback}
-              onSourceSelected={this.onSourceSelected}
-              onSwitchSource={this.onSwitchSource}              
-              freeUrl={freeUrl}
-              title={title}
-            />
-          </div>
+      <Frame
+        onComeback = { this.onComeback }
+        onSourceSelected = { this.onSourceSelected }
+        onSwitchSource = { this.onSwitchSource }
+        handleSwitchChannel = { this.handleSwitchChannel }
+        {...{ channel, url, freeUrl, title, isFullScreen }}
+      >
           <webview
             ref={ (webview) => {this.webview = webview} }
             title="腾讯视频"
@@ -115,8 +105,7 @@ class VideoPlay extends PureComponent < Props > {
             allowpopups="true"
           >
           </webview>
-        </div>
-      </div>
+      </Frame>
     );
   }
 }
