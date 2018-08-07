@@ -53,17 +53,17 @@
       
     },
     {
-      name: "搜你妹"+YoukuIcon,
+      name: "搜你妹",
       url: "http://www.sonimei.cn/?url=",
       
     },
     {
-      name: "vParse"+VQQIcon,
+      name: "vParse",
       url: "https://api.vparse.org/?url=",
       
     },
     {
-      name: "猫云"+VQQIcon,
+      name: "猫云",
       url: "https://jx.maoyun.tv/index.php?id=",
       
     },
@@ -73,7 +73,7 @@
       
     },
     {
-      name: "抢先影院"+YoukuIcon,
+      name: "抢先影院",
       url: "http://www.qxyingyuan.vip/play?make=url&id=",
       
     },
