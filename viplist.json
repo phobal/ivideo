@@ -43,6 +43,96 @@
       "url": "http://jx.vgoodapi.com/jx.php?url="
     },
     {
+      name: "够低调",
+      url: "http://goudidiao.com/?url=",
+      
+    },
+    {
+      name: "百域阁",
+      url: "http://api.baiyug.cn/vip/index.php?url=",
+      
+    },
+    {
+      name: "搜你妹"+YoukuIcon,
+      url: "http://www.sonimei.cn/?url=",
+      
+    },
+    {
+      name: "vParse"+VQQIcon,
+      url: "https://api.vparse.org/?url=",
+      
+    },
+    {
+      name: "猫云"+VQQIcon,
+      url: "https://jx.maoyun.tv/index.php?id=",
+      
+    },
+    {
+      name: "噗噗电影",
+      url: "http://pupudy.com/play?make=url&id=",
+      
+    },
+    {
+      name: "抢先影院"+YoukuIcon,
+      url: "http://www.qxyingyuan.vip/play?make=url&id=",
+      
+    },
+    {
+      name: "酷绘",
+      url: "http://appapi.svipv.kuuhui.com/svipjx/liulanqichajian/browserplugin/qhjx/qhjx.php?id=",
+      
+    },
+    {
+      name: "旋风解析",
+      url: "http://api.xfsub.com/index.php?url=",
+      
+    },
+    {
+      name: "石头解析",
+      url: "https://jiexi.071811.cc/jx.php?url=",
+      
+    },
+    {
+      name: "无名小站",
+      url: "http://www.sfsft.com/admin.php?url=",
+      
+    },
+    {
+      name: "VIP看看",
+      url: "http://q.z.vip.totv.72du.com/?url=",
+      
+    },
+    {
+      name: "ODFLV",
+      url: "http://aikan-tv.com/?url=",
+      
+    },
+    {
+      name: "163人",
+      url: "http://jx.api.163ren.com/vod.php?url=",
+      
+    },
+    {
+      name: "CKFLV",
+      url: "http://www.0335haibo.com/tong.php?url=",
+      
+    },
+    {
+      name: "无名小站2",
+      url: "http://www.wmxz.wang/video.php?url=",
+      
+    },
+    {
+      name: "眼睛会下雨",
+      url: "http://www.vipjiexi.com/yun.php?url=",
+      
+    },
+    {
+      name: "人人发布",
+      url: "http://v.renrenfabu.com/jiexi.php?url=",
+      
+    },
+    {
       "name": "5月-8",
       "url": "http://api.visaok.net/?url="
     },
