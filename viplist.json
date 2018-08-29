@@ -43,6 +43,10 @@
       "url": "http://jx.vgoodapi.com/jx.php?url="
     },
     {
+      "name": "51接口",
+      "url": "http://api.51ckm.com/jx.php?url="
+    },
+    {
       "name": "够低调",
       "url": "http://goudidiao.com/?url="
     },
