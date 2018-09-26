@@ -29,12 +29,24 @@
 
 ![](./resources/showcase04.jpg)
 
-### 技术栈
+技术栈
+Electron
+React
+Redux
+如何启动
+node version >= 7.6
 
-* Electron
-* React
-* Redux
-
+clone 项目到本地
+git clone https://github.com/phobal/ivideo.git
+进入项目 cd ivideo
+安装依赖 yarn install(如果没有的话，请全局安装yarn, npm i yarn -g)
+打开开发环境 yarn start
+如何编译
+编译全平台 yarn package-all
+编译当前平台 yarn package
+windows: yarn package-win
+Linux yarn package-linux
+编译出来的包都放在 release 目录下
 该项目是基于 [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate) 脚手架 进行创建，感谢 @[chentsulin](https://github.com/chentsulin)
 
 
