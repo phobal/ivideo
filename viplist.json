@@ -1,12 +1,12 @@
 {
     "platformlist": [
         {
-            "name": "腾讯视频",
-            "url": "https://v.qq.com/"
-        },
-        {
             "name": "爱奇艺",
             "url": "http://www.iqiyi.com/"
+        },
+        {
+            "name": "腾讯视频",
+            "url": "https://v.qq.com/"
         },
         {
             "name": "芒果",
@@ -25,6 +25,10 @@
             "url": "https://www.le.com/"
         },
         {
+            "name": "电影天堂",
+            "url": "http://www.btbtdy.net/"
+        },
+        {
             "name": "52影院",
             "url": "http://www.52xsba.com/"
         },
@@ -39,88 +43,8 @@
             "url": ""
         },
         {
-            "name": "万能接口5",
-            "url": "http://jx.vgoodapi.com/jx.php?url="
-        },
-        {
-            "name": "tt接口",
-            "url": "http://api.ttshangpin.com/jx.php?url="
-        },
-        {
-            "name": "51接口",
-            "url": "http://api.51ckm.com/jx.php?url="
-        },
-        {
-            "name": "够低调",
-            "url": "http://goudidiao.com/?url="
-        },
-        {
-            "name": "百域阁",
-            "url": "http://api.baiyug.cn/vip/index.php?url="
-        },
-        {
-            "name": "搜你妹",
-            "url": "http://www.sonimei.cn/?url="
-        },
-        {
-            "name": "vParse",
-            "url": "https://api.vparse.org/?url="
-        },
-        {
-            "name": "猫云",
-            "url": "https://jx.maoyun.tv/index.php?id="
-        },
-        {
-            "name": "噗噗电影",
-            "url": "http://pupudy.com/play?make=url&id="
-        },
-        {
-            "name": "抢先影院",
-            "url": "http://www.qxyingyuan.vip/play?make=url&id="
-        },
-        {
-            "name": "酷绘",
-            "url": "http://appapi.svipv.kuuhui.com/svipjx/liulanqichajian/browserplugin/qhjx/qhjx.php?id="
-        },
-        {
-            "name": "旋风解析",
-            "url": "http://api.xfsub.com/index.php?url="
-        },
-        {
-            "name": "石头解析",
-            "url": "https://jiexi.071811.cc/jx.php?url="
-        },
-        {
-            "name": "无名小站",
-            "url": "http://www.sfsft.com/admin.php?url="
-        },
-        {
-            "name": "VIP看看",
-            "url": "http://q.z.vip.totv.72du.com/?url="
-        },
-        {
-            "name": "ODFLV",
-            "url": "http://aikan-tv.com/?url="
-        },
-        {
-            "name": "163人",
-            "url": "http://jx.api.163ren.com/vod.php?url="
-        },
-        {
-            "name": "CKFLV",
-            "url": "http://www.0335haibo.com/tong.php?url="
-        },
-        {
-            "name": "无名小站2",
-            "url": "http://www.wmxz.wang/video.php?url="
-        },
-        {
-            "name": "眼睛会下雨",
-            "url": "http://www.vipjiexi.com/yun.php?url="
-        },
-        {
-            "name": "人人发布",
-            "url": "http://v.renrenfabu.com/jiexi.php?url="
+            "name": "9月-3",
+            "url": "http://jx.du2.cc/jx6.php?url="
         },
         {
             "name": "5月-8",
@@ -141,6 +65,10 @@
         {
             "name": "5月-12",
             "url": "http://api.baiyug.vip/index.php?url="
+        },
+        {
+            "name": "万能接口5(腾讯好使)",
+            "url": "http://jx.vgoodapi.com/jx.php?url="
         },
         {
             "name": "5月-14",
@@ -167,24 +95,32 @@
             "url": "hhttp://api.baiyug.cn/vip/?url="
         },
         {
-            "name": "5月-21",
-            "url": "http://jiexi.071811.cc/jx2.php?url="
-        },
-        {
-            "name": "5月-22",
-            "url": "http://www.82190555.com/index/qqvod.php?url="
-        },
-        {
-            "name": "5月-24",
-            "url": "http://www.82190555.com/index/qqvod.php?url="
-        },
-        {
-            "name": "4.21-2",
-            "url": "http://qtv.soshane.com/ko.php?url="
-        },
-        {
             "name": "4.21-3",
             "url": "https://yooomm.com/index.php?url="
+        },
+        {
+            "name": "6",
+            "url": "http://014670.cn/jx/ty.php?url="
+        },
+        {
+            "name": "8",
+            "url": "http://tv.x-99.cn/api/wnapi.php?id="
+        },
+        {
+            "name": "花园影视（可能无效）",
+            "url": "http://j.zz22x.com/jx/?url="
+        },
+        {
+            "name": "花园影视1",
+            "url": "http://j.88gc.net/jx/?url="
+        },
+        {
+            "name": "5月-6",
+            "url": "http://api.lvcha2017.cn/?url="
+        },
+        {
+            "name": "4.21-5",
+            "url": "http://jiexi.92fz.cn/player/vip.php?url="
         },
         {
             "name": "4.21-4",
@@ -243,14 +179,6 @@
             "url": "http://aikan-tv.com/?url="
         },
         {
-            "name": "花园影视（可能无效）",
-            "url": "http://j.zz22x.com/jx/?url="
-        },
-        {
-            "name": "花园影视1",
-            "url": "http://j.88gc.net/jx/?url="
-        },
-        {
             "name": "线路一(乐乐视频解析)",
             "url": "http://www.662820.com/xnflv/index.php?url="
         },
@@ -265,14 +193,6 @@
         {
             "name": "1",
             "url": "http://17kyun.com/api.php?url="
-        },
-        {
-            "name": "6",
-            "url": "http://014670.cn/jx/ty.php?url="
-        },
-        {
-            "name": "8",
-            "url": "http://tv.x-99.cn/api/wnapi.php?id="
         },
         {
             "name": "10",
@@ -299,10 +219,6 @@
             "url": "http://www.ckplayer.tv/kuku/?url="
         },
         {
-            "name": "5月-6",
-            "url": "http://api.lvcha2017.cn/?url="
-        },
-        {
             "name": "5月-7",
             "url": "http://www.aktv.men/?url="
         },
@@ -327,10 +243,6 @@
             "url": "http://v.2gty.com/apiurl/yun.php?url="
         },
         {
-            "name": "4.21-5",
-            "url": "http://jiexi.92fz.cn/player/vip.php?url="
-        },
-        {
             "name": "爱跟影院",
             "url": "http://2gty.com/apiurl/yun.php?url="
         },
@@ -349,6 +261,34 @@
         {
             "name": "5月-4",
             "url": "http://beaacc.com/api.php?url="
+        },
+        {
+            "name": "9月-1",
+            "url": "http://api.ledboke.com/?url="
+        },
+        {
+            "name": "9月-2",
+            "url": "http://jqaaa.com/jx.php?url="
+        },
+        {
+            "name": "9月-4",
+            "url": "http://jx.du2.cc/?url="
+        },
+        {
+            "name": "5月-21",
+            "url": "http://jiexi.071811.cc/jx2.php?url="
+        },
+        {
+            "name": "5月-22",
+            "url": "http://www.82190555.com/index/qqvod.php?url="
+        },
+        {
+            "name": "5月-24",
+            "url": "http://www.82190555.com/index/qqvod.php?url="
+        },
+        {
+            "name": "4.21-2",
+            "url": "http://qtv.soshane.com/ko.php?url="
         }
     ]
 }
