@@ -10,66 +10,78 @@
  *
  * @flow
  */
-import { app, BrowserWindow, ipcMain} from 'electron';
-import MenuBuilder from './menu';
+import { app, BrowserWindow, ipcMain } from "electron";
+import MenuBuilder from "./menu";
 
 let mainWindow = null;
 
-if (process.env.NODE_ENV === 'production') {
-  const sourceMapSupport = require('source-map-support');
+if (process.env.NODE_ENV === "production") {
+  const sourceMapSupport = require("source-map-support");
   sourceMapSupport.install();
 }
 
-if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true') {
-  require('electron-debug')();
-  const path = require('path');
-  const p = path.join(__dirname, '..', 'app', 'node_modules');
-  require('module').globalPaths.push(p);
+if (
+  process.env.NODE_ENV === "development" ||
+  process.env.DEBUG_PROD === "true"
+) {
+  require("electron-debug")();
+  const path = require("path");
+  const p = path.join(__dirname, "..", "app", "node_modules");
+  require("module").globalPaths.push(p);
 }
 
 const installExtensions = async () => {
-  const installer = require('electron-devtools-installer');
+  const installer = require("electron-devtools-installer");
   const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
-  const extensions = [
-    'REACT_DEVELOPER_TOOLS',
-    'REDUX_DEVTOOLS'
-  ];
+  const extensions = ["REACT_DEVELOPER_TOOLS", "REDUX_DEVTOOLS"];
 
-  return Promise
-    .all(extensions.map(name => installer.default(installer[name], forceDownload)))
-    .catch(console.log);
+  return Promise.all(
+    extensions.map(name => installer.default(installer[name], forceDownload))
+  ).catch(console.log);
 };
 
+// Try to append Pepper flash. See https://github.com/electron/electron/blob/master/docs/tutorial/using-pepper-flash-plugin.md
+if (app.getPath("pepperFlashSystemPlugin")) {
+  app.commandLine.appendSwitch(
+    "ppapi-flash-path",
+    app.getPath("pepperFlashSystemPlugin")
+  );
+}
 
 /**
  * Add event listeners...
  */
 
-app.on('window-all-closed', () => {
+app.on("window-all-closed", () => {
   // Respect the OSX convention of having the application in memory even
   // after all windows have been closed
-  if (process.platform !== 'darwin') {
+  if (process.platform !== "darwin") {
     app.quit();
   }
 });
 
-
-app.on('ready', async () => {
-  if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true') {
+app.on("ready", async () => {
+  if (
+    process.env.NODE_ENV === "development" ||
+    process.env.DEBUG_PROD === "true"
+  ) {
     await installExtensions();
   }
 
   mainWindow = new BrowserWindow({
     show: false,
     width: 1024,
-    height: 728
+    height: 728,
+    webPreferences: {
+      plugins: true
+    }
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
 
   // @TODO: Use 'ready-to-show' event
   //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
-  mainWindow.webContents.on('did-finish-load', () => {
+  mainWindow.webContents.on("did-finish-load", () => {
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');
     }
@@ -77,16 +89,16 @@ app.on('ready', async () => {
     mainWindow.focus();
   });
 
-  mainWindow.on('closed', () => {
+  mainWindow.on("closed", () => {
     mainWindow = null;
   });
 
-  mainWindow.on('enter-full-screen', () => {
-    mainWindow.webContents.send('enter-full-screen', true);
-  })
-  mainWindow.on('leave-full-screen', () => {
-    mainWindow.webContents.send('enter-full-screen', false);
-  })
+  mainWindow.on("enter-full-screen", () => {
+    mainWindow.webContents.send("enter-full-screen", true);
+  });
+  mainWindow.on("leave-full-screen", () => {
+    mainWindow.webContents.send("enter-full-screen", false);
+  });
   const menuBuilder = new MenuBuilder(mainWindow);
   menuBuilder.buildMenu();
 });
