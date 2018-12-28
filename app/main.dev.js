@@ -10,7 +10,7 @@
  *
  * @flow
  */
-import { app, BrowserWindow, ipcMain} from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import MenuBuilder from './menu';
 
 let mainWindow = null;
@@ -40,6 +40,14 @@ const installExtensions = async () => {
     .catch(console.log);
 };
 
+// Try to append Pepper flash. See https://github.com/electron/electron/blob/master/docs/tutorial/using-pepper-flash-plugin.md
+if (app.getPath("pepperFlashSystemPlugin")) {
+  app.commandLine.appendSwitch(
+    "ppapi-flash-path",
+    app.getPath("pepperFlashSystemPlugin")
+  );
+}
+
 
 /**
  * Add event listeners...
@@ -62,7 +70,10 @@ app.on('ready', async () => {
   mainWindow = new BrowserWindow({
     show: false,
     width: 1024,
-    height: 728
+    height: 728，
+    webPreferences: {
+      plugins: true
+    }
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);

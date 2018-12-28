@@ -103,6 +103,7 @@ class VideoPlay extends PureComponent < Props > {
             style={{ height: isFullScreen ? '100vh' : 'calc(100vh - 60px)', width: '100%' }}
             src={url}
             allowpopups="true"
+            plugins
           >
           </webview>
       </Frame>
