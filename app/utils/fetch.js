@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 
-const BASEURL = 'https://iodefog.github.io/text/viplist.json';
+const BASEURL = 'https://iodefog.github.io/text/mviplistmm.json';
 
 const instance = axios.create({
   baseURL: BASEURL,
