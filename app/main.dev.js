@@ -11,6 +11,7 @@
  * @flow
  */
 import { app, BrowserWindow, ipcMain } from 'electron';
+import MenuBuilder from './menu';
 
 let mainWindow = null;
 
