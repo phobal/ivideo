@@ -11,7 +11,6 @@
  * @flow
  */
 import { app, BrowserWindow, ipcMain } from 'electron';
-import MenuBuilder from './menu';
 
 let mainWindow = null;
 
@@ -41,7 +40,7 @@ const installExtensions = async () => {
 };
 
 // Try to append Pepper flash. See https://github.com/electron/electron/blob/master/docs/tutorial/using-pepper-flash-plugin.md
-if (app.getPath("pepperFlashSystemPlugin")) {
+if (process.platform === 'darwin' && app.getPath("pepperFlashSystemPlugin")) {
   app.commandLine.appendSwitch(
     "ppapi-flash-path",
     app.getPath("pepperFlashSystemPlugin")
