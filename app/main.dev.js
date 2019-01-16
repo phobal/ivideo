@@ -41,11 +41,13 @@ const installExtensions = async () => {
 };
 
 // Try to append Pepper flash. See https://github.com/electron/electron/blob/master/docs/tutorial/using-pepper-flash-plugin.md
-if (process.platform === 'darwin' && app.getPath("pepperFlashSystemPlugin")) {
+try {
   app.commandLine.appendSwitch(
     "ppapi-flash-path",
     app.getPath("pepperFlashSystemPlugin")
   );
+} catch (err) {
+  // Handling Non Flash Errors
 }
 
 
