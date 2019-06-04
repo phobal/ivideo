@@ -21,6 +21,7 @@ class VideoPlay extends PureComponent < Props > {
     channel: [],
     url: 'https://v.qq.com',
     freeUrl: [],
+    loading: false,
     selectedUrl: 'http://vip.jlsprh.com/index.php?url=',
     isFullScreen: false,
   }
@@ -62,10 +63,11 @@ class VideoPlay extends PureComponent < Props > {
     });
   }
   setTitle() {
-    const title = this.webview.getTitle();   
+    const title = this.webview.getTitle();
     this.setState({
       title,
-    }); 
+      loading: false,
+    });
   }
   onComeback() {
     this.webview.goBack();
@@ -82,20 +84,23 @@ class VideoPlay extends PureComponent < Props > {
   }
   onSwitchSource() {
     const { selectedUrl } = this.state;
-    const currentVideoUrl = this.webview.getURL();
+    const webviewUrl = this.webview.getURL();
+    const currentVideoUrl = webviewUrl.split('url=').pop();
     this.setState({
-      url: `${selectedUrl.url}${currentVideoUrl}`
+      url: `${selectedUrl.url}${currentVideoUrl}`,
+      loading: true,
     });
   }
+
   render() {
-    const { channel, url, freeUrl, title, isFullScreen } = this.state;
+    const { url, isFullScreen } = this.state;
     return (
       <Frame
         onComeback = { this.onComeback }
         onSourceSelected = { this.onSourceSelected }
         onSwitchSource = { this.onSwitchSource }
         handleSwitchChannel = { this.handleSwitchChannel }
-        {...{ channel, url, freeUrl, title, isFullScreen }}
+        {...this.state}
       >
           <webview
             ref={ (webview) => {this.webview = webview} }
@@ -103,9 +108,8 @@ class VideoPlay extends PureComponent < Props > {
             style={{ height: isFullScreen ? '100vh' : 'calc(100vh - 60px)', width: '100%' }}
             src={url}
             allowpopups="true"
-            plugins
-          >
-          </webview>
+            plugins="true"
+          />
       </Frame>
     );
   }
@@ -120,7 +124,7 @@ function mapDispatchToProps(dispatch) {
 }
 function mapStateToProps(state) {
   return {
-    source: state.source    
+    source: state.source
   }
 }
 

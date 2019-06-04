@@ -13,6 +13,7 @@ export const Frame = ({
   url,
   freeUrl,
   title,
+  loading,
   isFullScreen,
   children
 }) => {
@@ -30,9 +31,10 @@ export const Frame = ({
           <ToolBar
             onComeback={onComeback}
             onSourceSelected={onSourceSelected}
-            onSwitchSource={onSwitchSource}       
-            freeUrl={freeUrl}       
+            onSwitchSource={onSwitchSource}
+            freeUrl={freeUrl}
             title={title}
+            loading={loading}
           />
         </div>
         { children }

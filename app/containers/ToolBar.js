@@ -1,8 +1,7 @@
 import React from 'react';
 import Select, { Option } from 'rc-select';
-// import { Icon, Select, Button } from 'antd';
 
-const ToolBar = ({ onComeback, onSwitchSource, onSourceSelected, freeUrl, title }) => {
+const ToolBar = ({ onComeback, onSwitchSource, onSourceSelected, freeUrl, title, loading }) => {
   const options = freeUrl.map(d => {
     return (
       <Option key={d.name} value={d.name}>{d.name}</Option>
@@ -11,7 +10,7 @@ const ToolBar = ({ onComeback, onSwitchSource, onSourceSelected, freeUrl, title 
   return (
     <div style={{ display: 'flex', height: '100%', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px' }}>
       <div type="rollback" style={{ fontSize: '18px', cursor: 'pointer' }} onClick={onComeback}>返回</div>
-      <span style={{ padding: '0 20px', color: 'darkcyan' }}>{title}</span>
+      <span style={{ padding: '0 20px', color: 'darkcyan' }}>{loading ? '加载中...' : title}</span>
       <div
         style={{ display: 'flex', alignItems: 'center' }}
       >
