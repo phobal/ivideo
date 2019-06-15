@@ -1,7 +1,7 @@
 {
   "name": "ivideo",
   "productName": "ivideo",
-  "version": "1.1.0",
+  "version": "1.1.4",
   "description": "一个视频播放器观看国内主流视频网站，不用单独下载各个平台客户端",
   "scripts": {
     "build": "concurrently \"npm run build-main\" \"npm run build-renderer\"",
