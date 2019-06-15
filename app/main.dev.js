@@ -11,7 +11,14 @@
  * @flow
  */
 import { app, BrowserWindow, ipcMain } from 'electron';
+import updater from 'electron-simple-updater'
 import MenuBuilder from './menu';
+
+// update version checker
+updater.init({
+  checkUpdateOnStart: false,
+  autoDownload: false,
+})
 
 let mainWindow = null;
 

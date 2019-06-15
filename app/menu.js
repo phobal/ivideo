@@ -1,5 +1,15 @@
 // @flow
-import { app, Menu, shell, BrowserWindow } from 'electron';
+import {
+  app,
+  Menu,
+  shell,
+  BrowserWindow,
+  remote,
+  dialog,
+} from 'electron';
+
+const updater = require('electron-simple-updater');
+const notifier = require('node-notifier');
 
 export default class MenuBuilder {
   mainWindow: BrowserWindow;
@@ -41,17 +51,18 @@ export default class MenuBuilder {
 
   buildDarwinTemplate() {
     const subMenuAbout = {
-      label: 'Electron',
+      label: 'iVideo',
       submenu: [
-        { label: 'About ElectronReact', selector: 'orderFrontStandardAboutPanel:' },
+        { label: '关于 iVideo', selector: 'orderFrontStandardAboutPanel:' },
         { type: 'separator' },
-        { label: 'Services', submenu: [] },
+        { label: '检查更新...', click: () => { this.checkForUpdates()} },
+        { label: '服务', submenu: [] },
         { type: 'separator' },
-        { label: 'Hide ElectronReact', accelerator: 'Command+H', selector: 'hide:' },
-        { label: 'Hide Others', accelerator: 'Command+Shift+H', selector: 'hideOtherApplications:' },
-        { label: 'Show All', selector: 'unhideAllApplications:' },
+        { label: '最小化 iVideo', accelerator: 'Command+H', selector: 'hide:' },
+        { label: '隐藏其他', accelerator: 'Command+Shift+H', selector: 'hideOtherApplications:' },
+        { label: '显示所有', selector: 'unhideAllApplications:' },
         { type: 'separator' },
-        { label: 'Quit', accelerator: 'Command+Q', click: () => { app.quit(); } }
+        { label: '退出程序', accelerator: 'Command+Q', click: () => { app.quit(); } }
       ]
     };
     const subMenuEdit = {
@@ -178,5 +189,26 @@ export default class MenuBuilder {
     }];
 
     return templateDefault;
+  }
+
+  checkForUpdates() {
+    updater.checkForUpdates()
+    this.attachUpdaterHandlers()
+    console.log('have a new version')
+  }
+  attachUpdaterHandlers() {
+    updater.on('update-available', this.onUpdateAvailable);
+    updater.on('update-downloading', this.onUpdateDownloading);
+  }
+  onUpdateAvailable(meta) {
+    console.log(meta.version)
+    notifier.notify({
+      title: '版本更新通知',
+      message: `有新版本 V${meta.version} 可更新, 是否要更新？`,
+      wait: true,
+    });
+  }
+  onUpdateDownloading(meta) {
+    console.log(meta)
   }
 }
