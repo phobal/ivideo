@@ -9,7 +9,7 @@ import ToolBar from './ToolBar';
 import Frame from './Frame';
 import * as sourceActions from '../actions/source';
 
-class VideoPlay extends PureComponent < Props > {
+class VideoPlay extends PureComponent<Props> {
   constructor(props) {
     super(props);
     this.handleSwitchChannel = this.handleSwitchChannel.bind(this);
@@ -22,21 +22,20 @@ class VideoPlay extends PureComponent < Props > {
     url: 'https://v.qq.com',
     freeUrl: [],
     selectedUrl: 'http://vip.jlsprh.com/index.php?url=',
-    isFullScreen: false,
+    isFullScreen: false
   }
   componentDidMount() {
     this.props.actions.getAllVideoSource();
-    const webview = this.webview;
-    webview.addEventListener('dom-ready', () => {
+    const webView = this.webview;
+    webView.addEventListener('dom-ready', () => {
       this.setTitle();
     });
-    webview.addEventListener('new-window', (obj) => {
-      const { freeUrl } = this.state;
+    webView.addEventListener('new-window', (obj) => {
       this.setState({
         url: `${obj.url}`
       });
     });
-    webview.addEventListener('will-navigate', (obj) => {
+    webView.addEventListener('will-navigate', (obj) => {
       this.setState({
         url: `${obj.url}`
       });
@@ -49,7 +48,7 @@ class VideoPlay extends PureComponent < Props > {
   }
   componentWillReceiveProps(nextProps) {
     const { source } = nextProps;
-    if(source) {
+    if (source) {
       this.setState({
         channel: source.platformlist,
         freeUrl: source.list
@@ -62,22 +61,22 @@ class VideoPlay extends PureComponent < Props > {
     });
   }
   setTitle() {
-    const title = this.webview.getTitle();   
+    const title = this.webview.getTitle();
     this.setState({
-      title,
-    }); 
+      title
+    });
   }
   onComeback() {
     this.webview.goBack();
   }
   onSourceSelected(value) {
-    const selectedUrl = this.state.freeUrl.find(d => {
+    const selectedUrl = this.state.freeUrl.find((d) => {
       if (d.name === value) {
         return d.url;
       }
-    })
+    });
     this.setState({
-      selectedUrl,
+      selectedUrl
     });
   }
   onSwitchSource() {
@@ -88,24 +87,36 @@ class VideoPlay extends PureComponent < Props > {
     });
   }
   render() {
-    const { channel, url, freeUrl, title, isFullScreen } = this.state;
+    const {
+ channel, url, freeUrl, title, isFullScreen 
+} = this.state;
     return (
       <Frame
-        onComeback = { this.onComeback }
-        onSourceSelected = { this.onSourceSelected }
-        onSwitchSource = { this.onSwitchSource }
-        handleSwitchChannel = { this.handleSwitchChannel }
-        {...{ channel, url, freeUrl, title, isFullScreen }}
+        onComeback={this.onComeback}
+        onSourceSelected={this.onSourceSelected}
+        onSwitchSource={this.onSwitchSource}
+        handleSwitchChannel={this.handleSwitchChannel}
+        {...{
+          channel,
+          url,
+          freeUrl,
+          title,
+          isFullScreen
+        }}
       >
-          <webview
-            ref={ (webview) => {this.webview = webview} }
-            title="腾讯视频"
-            style={{ height: isFullScreen ? '100vh' : 'calc(100vh - 60px)', width: '100%' }}
-            src={url}
-            allowpopups="true"
-            plugins
-          >
-          </webview>
+        <webview
+          ref={(webview) => {
+            this.webview = webview;
+          }}
+          title="腾讯视频"
+          style={{
+            height: isFullScreen ? '100vh' : 'calc(100vh - 60px)',
+            width: '100%'
+          }}
+          src={url}
+          allowpopups="true"
+          plugins
+        />
       </Frame>
     );
   }
@@ -114,14 +125,17 @@ class VideoPlay extends PureComponent < Props > {
 function mapDispatchToProps(dispatch) {
   return {
     actions: {
-      ...bindActionCreators(sourceActions, dispatch),
-    },
-  }
+      ...bindActionCreators(sourceActions, dispatch)
+    }
+  };
 }
 function mapStateToProps(state) {
   return {
-    source: state.source    
-  }
+    source: state.source
+  };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(VideoPlay);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(VideoPlay);
