@@ -1,0 +1,102 @@
+{
+  "platformlist": [
+    {
+      "name": "爱奇艺",
+      "url": "http://www.iqiyi.com/"
+    },
+    {
+      "name": "腾讯视频",
+      "url": "https://v.qq.com/"
+    },
+    {
+      "name": "芒果",
+      "url": "https://www.mgtv.com/"
+    },
+    {
+      "name": "优酷",
+      "url": "https://www.youku.com/"
+    },
+    {
+      "name": "搜狐视频",
+      "url": "https://tv.sohu.com/"
+    },
+    {
+      "name": "乐视视频",
+      "url": "https://www.le.com/"
+    },
+    {
+      "name": "电影天堂",
+      "url": "http://www.btbtdy.net/"
+    },
+    {
+      "name": "新视觉影院",
+      "url": "http://www.yy3080.com/vod-type-id-1-pg-1.html/"
+    }
+  ],
+  "list": [
+    {
+      "name": "5月-21",
+      "url": "http://jiexi.071811.cc/jx2.php?url="
+    },
+    {
+      "name": "9月-2",
+      "url": "http://jqaaa.com/jx.php?url="
+    },
+    {
+      "name": "5月-4",
+      "url": "http://beaacc.com/api.php?url="
+    },
+    {
+      "name": "4.21-4",
+      "url": "http://www.82190555.com/index.php?url="
+    },
+    {
+      "name": "4.21-6",
+      "url": "http://www.85105052.com/admin.php?url="
+    },
+    {
+      "name": "5月-23",
+      "url": "http://api.baiyug.cn/vip/index.php?url="
+    },
+    {
+      "name": "4.21-3-慢",
+      "url": "https://yooomm.com/index.php?url="
+    },
+    {
+      "name": "5月-24",
+      "url": "http://www.82190555.com/index/qqvod.php?url="
+    },
+    {
+      "name": "1",
+      "url": "http://17kyun.com/api.php?url="
+    },
+    {
+      "name": "品优解析-可播但广告",
+      "url": "http://api.pucms.com/xnflv/?url="
+    },
+    {
+      "name": "5月-1",
+      "url": "http://www.82190555.com/index/qqvod.php?url="
+    },
+    {
+      "name": "腾讯可用，金桥解析",
+      "url": "http://jqaaa.com/jx.php?url="
+    },
+    {
+      "name": "速度牛",
+      "url": "http://api.wlzhan.com/sudu/?url="
+    },
+    {
+      "name": "万能接口6",
+      "url": "http://wwwhe1.177kdy.cn/4.php?pass=1&url="
+    },
+    {
+      "name": "花园影视（可能无效）",
+      "url": "http://j.zz22x.com/jx/?url="
+    },
+    {
+      "name": "9月-1",
+      "url": "http://api.ledboke.com/?url="
+    }
+  ]
+}
