@@ -175,7 +175,7 @@
     "jest": "^22.1.4",
     "less": "^3.0.1",
     "less-loader": "^4.1.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "node-sass": "^4.7.2",
     "npm-logical-tree": "^1.2.1",
     "react-test-renderer": "^16.2.0",
