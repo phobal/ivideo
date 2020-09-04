@@ -176,7 +176,7 @@
     "less": "^3.0.1",
     "less-loader": "^4.1.0",
     "minimist": "^1.2.0",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.13.1",
     "npm-logical-tree": "^1.2.1",
     "react-test-renderer": "^16.2.0",
     "redux-logger": "^3.0.6",
